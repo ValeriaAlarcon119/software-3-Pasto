@@ -40,43 +40,4 @@ class Cola:
             ban = True
         return ban
 
-    def desencolar(self):
-        """método que permite remover un dato de la cola.
-
-        Returns:
-            Object: dato que se removera de la cola.
-        """
-        frente_ant = self.frente
-        frente_nuevo = self.frente.sig
-
-        if self.es_vacia():
-            return None
-        elif frente_nuevo:
-            self.frente = frente_nuevo
-            self.frente.sig = frente_nuevo.sig
-            return frente_ant
-        else:
-            self.frente = NodoLSE(None)
-            return frente_ant
-
-    def __frente__(self):
-        """método que permite conocer el elemento que se encuentra en el frente de la cola.
-
-        Returns:
-            Object: objeto que esta en el frente de la cola.
-        """
-        return self.frente
-
-    def __len__(self):
-        """método que calcula el número de elementos en la cola.
-
-        Returns:
-            int: número de datos de la cola.
-        """
-        nodo_actual = self.frente
-        cont = 0
-
-        while nodo_actual:
-            cont +=1
-            nodo_actual = nodo_actual.sig
-        return cont
+    
